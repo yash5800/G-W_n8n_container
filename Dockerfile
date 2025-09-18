@@ -1,13 +1,4 @@
-FROM n8nio/n8n
-
-# Set working directory
-WORKDIR /home/node
-
-# Ensure correct user
-USER node
-
-# Expose n8n port
-EXPOSE 5678
-
-# Start n8n (this is already in base image, but explicit here)
+FROM node:18
+RUN npm install -g n8n
 CMD ["n8n"]
+
